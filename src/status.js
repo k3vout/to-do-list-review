@@ -1,13 +1,13 @@
 export default class Status {
   validation() {
     if (this.checked) {
-      this.nextSibling.style["text-decoration"] = "line-through";
-      this.nextSibling.style.color = "#909090";
+      this.nextSibling.style['text-decoration'] = 'line-through';
+      this.nextSibling.style.color = '#909090';
       // Save in Local Storage
       Status.saveChanges();
     } else {
-      this.nextSibling.style["text-decoration"] = "none";
-      this.nextSibling.style.color = "#000";
+      this.nextSibling.style['text-decoration'] = 'none';
+      this.nextSibling.style.color = '#000';
       // Save in Local Storage
       Status.saveChanges();
     }
@@ -15,7 +15,7 @@ export default class Status {
 
   static saveChanges() {
     const newList = [];
-    const listLi = document.querySelectorAll(".item");
+    const listLi = document.querySelectorAll('.item');
     listLi.forEach((li, i) => {
       newList.push({
         index: i + 1,
@@ -23,6 +23,6 @@ export default class Status {
         completed: li.firstChild.firstChild.checked,
       });
     });
-    localStorage.setItem("ToDoList", JSON.stringify(newList));
+    localStorage.setItem('ToDoList', JSON.stringify(newList));
   }
 }
